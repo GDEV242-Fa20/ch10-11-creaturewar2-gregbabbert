@@ -50,6 +50,15 @@ public abstract class Creature
         return 0;
     }
     
+ 
+    /**
+     * Creates the number used for the attack method
+     * @return a random value between 1 and str to be used for the attack method
+     */
+    public int damage(){
+        int damageCaused = Randomizer.nextInt(str);
+        return damageCaused;
+    }
     
     /**
      * Is this creature still capable of fighting?
@@ -65,8 +74,11 @@ public abstract class Creature
      * @return true when current hit point level is less than or equal to zero
      */
     public boolean isKnockedOut() {
-        //TODO: implement a method to report if the creature has been killed
-        return false; //change this
+        boolean knockedOut = false;
+        if (hp <= 0){
+            knockedOut = true;
+        }
+        return knockedOut;
     }
     
     
