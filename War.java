@@ -49,11 +49,41 @@ public class War
         return badArmy;
     }
     
-    public void test() {
+    public void battle() {
         ArrayList<Creature> goodArmy = createGoodArmy();
         ArrayList<Creature> badArmy = createBadArmy();
         System.out.println(goodArmy);
         System.out.println(badArmy);
+        
+        
+        
+        while (goodArmy.get(0).isAlive() && badArmy.get(0).isAlive()) {
+            goodArmy.get(0).takeDamage(badArmy.get(0).damage());
+            badArmy.get(0).takeDamage(goodArmy.get(0).damage());
+            if (goodArmy.get(0).isKnockedOut() && badArmy.get(0).isKnockedOut()){
+                goodArmy.remove(0);
+                badArmy.remove(0);
+            }
+            else if (goodArmy.get(0).isKnockedOut()){
+                goodArmy.remove(0);
+            }
+            else if (badArmy.get(0).isKnockedOut()){
+                badArmy.remove(0);
+            }
+            
+            if (goodArmy.size() == 0){
+                System.out.println("The bad army won!");
+                break;
+            }
+            if (badArmy.size() == 0){
+                System.out.println("The good army won!");
+                break;
+            }
+        }
+        
+        System.out.println(goodArmy);
+        System.out.println(badArmy);
+        
     }
     
 }
