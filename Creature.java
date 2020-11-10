@@ -37,17 +37,24 @@ public abstract class Creature
      * @param hp the health of the creature at the start of the simulation, and the current health levels during battle
      */
     public Creature (int str, int hp) {
-       //implement this
+       this.str = str;
+       this.hp = hp;
     }
     
+    /**
+     * This is the getter method for a creature's hp
+     */
+    public int getHealth() {
+        return hp;
+    }
     
     /**
      * Allows a creature to determine how much damage it is causing in this round of battle
      * @return a value between 1 and str to be used to cause damage to another creature
      */
     public int attack(){
-        // TODO: implement a damage method
-        return 0;
+        int attack = damage();
+        return attack;
     }
     
  
@@ -65,8 +72,11 @@ public abstract class Creature
      * @return true when current hit point level is greater than zero
      */
     public boolean isAlive() {
-        // TODO: implement a method to report if the creature yet lives
-        return false; //change this
+        boolean alive = false;
+        if (hp > 0) {
+            alive = true;
+        }
+        return alive;
     }
     
     /**
@@ -88,7 +98,7 @@ public abstract class Creature
      * @param damage value to remove from hit point count
      */
     public void takeDamage(int damage) {
-        // TODO: implement this
+        hp = hp - damage;
     }
     
 }
