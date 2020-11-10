@@ -39,6 +39,7 @@ public abstract class Creature
     public Creature (int str, int hp) {
        this.str = str;
        this.hp = hp;
+       max_hp = hp;
     }
     
     /**
