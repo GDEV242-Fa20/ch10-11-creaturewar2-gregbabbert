@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 /**
- * Write a description of class War here.
+ * The War class is used to create the final battle between the good and bad armies. The War class creates two
+ * ArrayLists, one for each of the armies, and then it fills those lists with different types of Creatures.
+ * The methods used to fill the ArrayLists are createGoodArmy and createBadArmy. To have the battle take
+ * place the user class the method battle, which then returns who wins the battle.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Greg Babbert
+ * @version 11.10.2020
  */
 public class War
 {
-    // instance variables - replace the example below with your own
+    
     private ArrayList goodArmy;
     private Creature creatureArray[];
 
@@ -20,6 +23,12 @@ public class War
         ArrayList<Creature> badArmy = new ArrayList<Creature>();
     }
     
+    
+    /**
+     * This method is used to create the good army, which is filled with Creatures
+     * of types Human, Dwarve, and Elf.
+     * @return a good army
+     */
     public ArrayList<Creature> createGoodArmy(){
         ArrayList<Creature> goodArmy = new ArrayList<Creature>();
         for (int i = 1; i <= 100; ++i){
@@ -35,6 +44,12 @@ public class War
         return goodArmy;
     }
     
+    
+    /**
+     * This method is used to create the bad army, which is filled with Creatures
+     * of types Human, CyberDemon, Troll, and Barlog.
+     * @return a bad army
+     */
     public ArrayList<Creature> createBadArmy(){
         ArrayList<Creature> badArmy = new ArrayList<Creature>();
         int badArmySize = Randomizer.nextInt(50-30)+30;
@@ -53,11 +68,19 @@ public class War
         return badArmy;
     }
     
+    
+    
+    /**
+     * This method is used to simulate the battle between the good and bad armies.
+     * Each army send one creature to fight, then those two creatures fight. If one or both of
+     * the creatures are killed, then those creatures are removed from their army's list and
+     * the next creatures from the armies are sent to fight. The loop breaks when there are no more
+     * creatures from the good or bad army to fight. The winner of the battle is then printed.
+     */
     public void battle() {
         ArrayList<Creature> goodArmy = createGoodArmy();
         ArrayList<Creature> badArmy = createBadArmy();
-        System.out.println(goodArmy);
-        System.out.println(badArmy);
+        
         while (goodArmy.get(0).isAlive() && badArmy.get(0).isAlive()) {
             goodArmy.get(0).takeDamage(badArmy.get(0).damage());
             badArmy.get(0).takeDamage(goodArmy.get(0).damage());

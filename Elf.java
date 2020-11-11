@@ -1,12 +1,12 @@
 
 
 /**
- * The Elf class implements a wrapper for the base Creature class with the following additions
- * Implements a maximum/minimum strength for the creature type [20/5]
- * Implements a maximum/minimum hitpoint total for the creature type [25/5]
+ * The Elf class is a subclass for the Creature superclass and it fights for the good army.
+ * There's a ten percent chance that its damage method will reult in magic damage, which is
+ * the elf's normal damage times two
  * 
- * @author Bill Crosbie
- * @version 2020-10 v1.0
+ * @author Greg Babbert
+ * @version 11.10.2020
  */
 public class Elf extends Creature
 {

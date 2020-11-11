@@ -1,8 +1,8 @@
 
 
 /**
- * The CyberDemon class is a subclass of the Creature class. It will never actually get instantiated,
- * it's only purpose if to create a new Damage method for the CyberDemon subclasses to use
+ * The CyberDemon class is a subclass of the Demon class, which is a subclass of the Creature class.
+ * It doesn't have any special properties, it just uses the Demon damage method intead of the Creature's method.
  * 
  * @author Greg Babbert
  * @version 11.9.2020

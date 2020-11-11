@@ -1,11 +1,13 @@
 
 
 /**
- * The Troll class is a subclass of the Creature class. It will never actually get instantiated,
- * it's only purpose if to create a new Damage method for the Troll subclasses to use
+ * The Troll class is a subclass of the Demon class, which is a subclass of the Creature class.
+ * The Troll fights for the bad army, and even though Trolls are very big and strong, they're often
+ * portrayed as being slow and not very smart. The because of this the Troll has the capability
+ * of having very good HP and strength, but it's also possible that they won't attack on their turn.
  * 
  * @author Greg Babbert
- * @version 11.9.2020
+ * @version 11.10.2020
  */
 public class Troll extends Demon
 {
@@ -33,8 +35,11 @@ public class Troll extends Demon
 
     /**
      * Creates the number used for the attack method
-     * @return a random value between a Demon sublcasses' minimum strength and its maximum strength,
-     * and if the if statement is true then it returns the random number plus fifty
+     * Trolls are really strong, but they aren't very fast or smart.
+     * The if statement determines whether the Troll attacked during a round.
+     * If the if statment is true, then the Troll was too slow and their attack is 0
+     * @return a random value between the Troll class' minimum strength and its maximum strength,
+     * unless the if statment is true and then it returns an attack of 0
      */
     public int damage(){
         int chance = Randomizer.nextInt(10);

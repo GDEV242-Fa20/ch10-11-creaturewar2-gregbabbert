@@ -1,15 +1,15 @@
 
 
 /**
- * The Barlog class is a subclass of the Creature class. It will never actually get instantiated,
- * it's only purpose if to create a new Damage method for the Barlog subclasses to use
+ * The Barlog class is a subclass of the Demon class, which is a subclass of the Creature class.
+ * The Barlog is very powerful, and it can actually cause damage twice on one turn.
  * 
  * @author Greg Babbert
  * @version 11.9.2020
  */
 public class Barlog extends Demon
 {
-    // instance variables - replace the example below with your own
+    
     private static final int MAX_BARLOG_HP = 200;
     private static final int MIN_BARLOG_HP = 50;
     private static final int MAX_BARLOG_STR = 100;
@@ -33,8 +33,8 @@ public class Barlog extends Demon
 
     /**
      * Creates the number used for the attack method
-     * @return a random value between a Demon sublcasses' minimum strength and its maximum strength,
-     * and if the if statement is true then it returns the random number plus fifty
+     * @return the damage method from the Creature class is called twice, and then
+     * the sum of those two calls are added up and returned
      */
     public int damage(){
         int firstDamageCaused = super.damage();

@@ -1,12 +1,12 @@
 
 
 /**
- * The Dwarve class implements a wrapper for the base Creature class with the following additions
- * Implements a maximum/minimum strength for the creature type [20/5]
- * Implements a maximum/minimum hitpoint total for the creature type [25/5]
+ * The Dwarve class is a subclass of the Creature superclass. It is the same as the Elf class
+ * but their hp and str values are different. There's a 3/20 percent chance that its damage method
+ * will reult in magic damage, which is the dwarve's normal damage times two
  * 
- * @author Bill Crosbie
- * @version 2020-10 v1.0
+ * @author Greg Babbert
+ * @version 11.10.2020
  */
 public class Dwarve extends Creature
 {
@@ -37,7 +37,7 @@ public class Dwarve extends Creature
     
     /**
      * Creates the number used for the attack method
-     * @return a random value between the elf's minimum strength and its maximum strength,
+     * @return a random value between the dwarve's minimum strength and its maximum strength,
      * and if the if statement is true then it returns the random number times two
      */
     public int damage(){
