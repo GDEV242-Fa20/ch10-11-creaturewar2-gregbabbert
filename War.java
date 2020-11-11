@@ -24,8 +24,10 @@ public class War
         ArrayList<Creature> goodArmy = new ArrayList<Creature>();
         for (int i = 1; i <= 100; ++i){
             int type = Randomizer.nextInt(10);
-            if (type <= 6) {
+            if (type <= 5) {
                 goodArmy.add(new Human());
+            } else if (type <=7) {
+                goodArmy.add(new Dwarve());
             } else {
                 goodArmy.add(new Elf());
             }
@@ -38,10 +40,12 @@ public class War
         int badArmySize = Randomizer.nextInt(50-30)+30;
         for (int i = 1; i <= badArmySize; ++i){
             int type = Randomizer.nextInt(25);
-            if (type <= 18) {
+            if (type <= 15) {
                 badArmy.add(new Human());
-            } else if (type <= 24) {
+            } else if (type <= 22) {
                 badArmy.add(new CyberDemon());
+            } else if (type <= 24) {
+                badArmy.add(new Troll());
             } else {
                 badArmy.add(new Barlog());
             }
@@ -54,9 +58,6 @@ public class War
         ArrayList<Creature> badArmy = createBadArmy();
         System.out.println(goodArmy);
         System.out.println(badArmy);
-        
-        
-        
         while (goodArmy.get(0).isAlive() && badArmy.get(0).isAlive()) {
             goodArmy.get(0).takeDamage(badArmy.get(0).damage());
             badArmy.get(0).takeDamage(goodArmy.get(0).damage());
@@ -80,9 +81,6 @@ public class War
                 break;
             }
         }
-        
-        System.out.println(goodArmy);
-        System.out.println(badArmy);
         
     }
     
